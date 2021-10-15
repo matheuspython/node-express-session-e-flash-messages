@@ -1,17 +1,10 @@
-const HomeModel = require('../models/HomeModel')
-HomeModel.find() //ira buscar todos os dados
-HomeModel.create({
-  titulo: 'um titulo de teste',
-  descricao: 'uma descricao'
-})
-
-.then(dados => console.log(dados))
-.catch(e => console.log(e))
-
 exports.paginaInicial = (req, res)=>{
-    res.render('index');
-    // console.log(`oi ${req.session.nome}`)
-    // next();
+  // req.session.usuario = {
+  //   nome: 'math',
+  //   logado: true
+  // }
+  console.log(req.session.usuario)
+  res.render('index');
 }
 
 exports.trataPost = (req, res) =>{
